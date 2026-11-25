@@ -1,10 +1,17 @@
 # Data Mining Lab Assignment 2: Medallion Data Lake & Recommender System
 
+## Student Information
+- **Name**: Srivastav
+- **Roll Number**: LIT2023037
+- **Course**: Data Mining Lab Assignment 2
+- **Topic**: Medallion Data Architecture (Lakehouse) & Item-Based Collaborative Filtering
+
 ## Overview
 This repository contains the complete end-to-end implementation of a **Medallion Data Lake (Bronze -> Silver -> Gold)** and an **Item-Based Collaborative Filtering Recommender System** built on the **Book-Crossing** dataset.
 
 The workflow is available as an executable, self-contained Google Colab Jupyter Notebook:
 - **Notebook**: [`recommender_system_medallion.ipynb`](./recommender_system_medallion.ipynb)
+- **Roll Number Specific Copy**: [`LIT2023037_recommender_system_medallion.ipynb`](./LIT2023037_recommender_system_medallion.ipynb)
 
 ---
 
