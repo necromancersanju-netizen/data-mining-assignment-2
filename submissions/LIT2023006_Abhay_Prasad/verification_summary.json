@@ -1,0 +1,41 @@
+{
+  "student": "Abhay Prasad",
+  "roll_number": "LIT2023006",
+  "source_url": "https://cdn.freecodecamp.org/project-data/books/book-crossings.zip",
+  "source_sha256": "adc7b47afb47c8e29e5f0b70a9816569b3367c5588064ba7a916f16e3ef5d060",
+  "ingestion_timestamp": "2026-11-26 14:30:45+00:00",
+  "versions": {
+    "pandas": "2.2.2",
+    "numpy": "2.0.2",
+    "scikit_learn": "1.6.1"
+  },
+  "bronze_rows": {
+    "books": 271379,
+    "users": 278858,
+    "ratings": 1149780
+  },
+  "silver_rows": {
+    "users": 1820,
+    "books": 2030,
+    "ratings": 41469
+  },
+  "zero_ratings_removed": 716109,
+  "min_ratings_per_user_and_book": 10,
+  "gold_matrix": {
+    "users": 1820,
+    "books": 2030,
+    "ratings": 41469,
+    "filled_percent": 1.122
+  },
+  "silver_checks_passed": true,
+  "demo_users": [
+    182442,
+    29209,
+    216466
+  ],
+  "hit_rate_at_10": {
+    "item_based_cf": 0.128,
+    "most_popular": 0.04,
+    "test_users": 500
+  }
+}
