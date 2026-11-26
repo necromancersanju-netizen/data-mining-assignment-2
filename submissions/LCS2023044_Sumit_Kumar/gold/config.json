@@ -1,0 +1,15 @@
+{
+  "min_ratings": 10,
+  "liked_rating_threshold": 8,
+  "candidate_neighbors": 50,
+  "sample_users": [
+    243,
+    805,
+    1424
+  ],
+  "matrix_shape": [
+    1820,
+    2030
+  ],
+  "observed_ratings": 41469
+}
