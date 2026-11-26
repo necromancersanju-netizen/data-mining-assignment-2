@@ -1,0 +1,8 @@
+# Dataset and generated data-lake artifacts (recreated when the notebook runs)
+book-crossings/
+
+
+# Jupyter / OS noise
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
