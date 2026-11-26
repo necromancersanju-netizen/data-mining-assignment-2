@@ -21,10 +21,10 @@ submissions/LIT2023006_Abhay_Prasad/
 ├── Data_Lake_Assignment.ipynb     # executed notebook with all outputs
 ├── README.md
 ├── verification_summary.json     # key counts and results written by the notebook
-├── bronze/                       # raw source tables + ingestion_timestamp (Parquet, zstd)
-│   ├── books.parquet
-│   ├── users.parquet
-│   └── ratings.parquet
+├── bronze/                       # raw source tables + ingestion_timestamp
+│   ├── books/part-0..3.parquet   # each table = 4 zstd Parquet part files (<= 3.2 MB each)
+│   ├── users/part-0..3.parquet
+│   └── ratings/part-0..3.parquet
 ├── silver/                       # cleaned, typed, filtered tables (Parquet)
 │   ├── books.parquet
 │   ├── users.parquet
@@ -41,7 +41,7 @@ The downloaded zip and the extracted CSV files go to `raw/`. This folder is git-
 
 ## Pipeline
 
-**Step 1: Bronze.** The files are read with `sep=';'`, `encoding='latin-1'` and `escapechar='\\'`. Without the escape character, `BX-Books.csv` breaks at line 6,452 on titles such as `Of Mice and Men (Steinbeck \"Essentials\")`. As UTF-8 the file does not decode. Every column is kept as raw text with no missing-value conversion, so the literal `NULL` ages stay as they are. `ingestion_timestamp` is added and the tables are saved as zstd-compressed Parquet, then read back to confirm they are identical.
+**Step 1: Bronze.** The files are read with `sep=';'`, `encoding='latin-1'` and `escapechar='\\'`. Without the escape character, `BX-Books.csv` breaks at line 6,452 on titles such as `Of Mice and Men (Steinbeck \"Essentials\")`. As UTF-8 the file does not decode. Every column is kept as raw text with no missing-value conversion, so the literal `NULL` ages stay as they are. `ingestion_timestamp` is added and each table is saved as a folder of 4 zstd-compressed Parquet part files, the layout Spark uses for data-lake tables. The tables are then read back to confirm they are identical.
 
 **Step 2: EDA.** One finding and the Silver action for each item:
 
