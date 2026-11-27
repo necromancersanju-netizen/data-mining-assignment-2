@@ -2,18 +2,6 @@
 .venv/
 venv/
 
-# Data lake layers & downloaded archives
-book-crossings.zip
-**/book-crossings.zip
-raw/
-**/raw/
-bronze/
-**/bronze/
-silver/
-**/silver/
-gold/
-**/gold/
-
 # Jupyter & Python caches
 .ipynb_checkpoints/
 **/__pycache__/
